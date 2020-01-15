@@ -7,9 +7,8 @@ Small lib that permit to compute data from tracking activities data.
 2. A (Dark Sky)[https://darksky.net/dev] API key
 
 2. Installation
-(The package is not published yet, if you wish to use it you have to clone the repository)
 ```bash
-npm i -s activities-lab
+npm i @neilujd/activities-lab
 ```
 
 # How to use
