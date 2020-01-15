@@ -1,0 +1,45 @@
+{
+  "name": "activities-lab",
+  "version": "1.0.0",
+  "description": "POC that permit to track basic activities using GPS data.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "./node_modules/eslint/bin/eslint.js ./*.js src",
+    "test": "npm run lint && mocha --require esm --exit"
+  },
+  "keywords": [
+    "activity",
+    "tracking"
+  ],
+  "author": "NeilujD <julien.collard14@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "esm": "^3.2.25",
+    "mocha": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "src/*.js",
+    "test/*.test.js",
+    "example.js",
+    "index.js",
+    "sample.js",
+    "settings.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NeilujD/activities-lab.git"
+  },
+  "directories": {
+    "src": "./src",
+    "test": "./test"
+  }
+}
