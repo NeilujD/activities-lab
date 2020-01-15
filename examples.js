@@ -1,8 +1,10 @@
+import dotenv from 'dotenv';
 import { Track } from './src/track.js';
 import waypoints from './sample.js';
 
-const main = async () => {
+dotenv.config();
 
+const main = async () => {
   let t = new Track(waypoints);
   
   console.log(`Track temperature : ${await t.getTemperature()}°C`);

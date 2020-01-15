@@ -78,7 +78,7 @@ class Track {
   getTemperature () {
     const firstPoint = this.waypoints[0];
     return new Promise ((res, rej) => {
-      request(`${DARK_SKY_API.uri}/${DARK_SKY_API.secret_key}/${firstPoint.lat},${firstPoint.lon},${firstPoint.time/1000}`, (error, response, body) => {
+      request(`${DARK_SKY_API.uri}/${process.env.DARK_SKY_API_KEY}/${firstPoint.lat},${firstPoint.lon},${firstPoint.time/1000}`, (error, response, body) => {
         if (error) return rej(error);
         const data = JSON.parse(body).hourly.data;
 

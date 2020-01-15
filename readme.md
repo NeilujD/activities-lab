@@ -4,6 +4,8 @@ Small lib that permit to compute data from tracking activities data.
 # Requirements
 1. Node version should be >=12
 
+2. A (Dark Sky)[https://darksky.net/dev] API key
+
 2. Installation
 (The package is not published yet, if you wish to use it you have to clone the repository)
 ```bash
@@ -11,6 +13,9 @@ npm i -s activities-lab
 ```
 
 # How to use
+1. Set the environment variable `DARK_SKY_API_KEY`
+
+2. Here is an example :
 ```node
 import { Track, Activity, Marathon } from 'activities-lab';
 import waypoints from 'activities-lab/sample.js';
