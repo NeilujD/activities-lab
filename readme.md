@@ -4,7 +4,7 @@ Small lib that permit to compute data from tracking activities data.
 # Requirements
 1. Node version should be >=12
 
-2. A (Dark Sky)[https://darksky.net/dev] API key
+2. A [Dark Sky](https://darksky.net/dev) API key
 
 2. Installation
 ```bash
