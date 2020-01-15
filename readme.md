@@ -24,3 +24,8 @@ const activity = new Activity(Activity.getSportTypes().WALKING, track);
 
 console.log(activity.isValid());
 ```
+
+# Test
+```bash
+npm test
+```
