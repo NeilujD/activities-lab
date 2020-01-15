@@ -1,5 +1,5 @@
 {
-  "name": "activities-lab",
+  "name": "@neilujd/activities-lab",
   "version": "1.0.0",
   "description": "POC that permit to track basic activities using GPS data.",
   "main": "index.js",
