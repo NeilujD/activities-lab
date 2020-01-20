@@ -1,4 +1,4 @@
-import request from 'request';
+import https from 'https';
 import { DARK_SKY_API } from '../settings.js';
 
 /** The class constructor initialize the instance with a list of GPS points with time
@@ -78,17 +78,24 @@ class Track {
   getTemperature () {
     const firstPoint = this.waypoints[0];
     return new Promise ((res, rej) => {
-      request(`${DARK_SKY_API.uri}/${process.env.DARK_SKY_API_KEY}/${firstPoint.lat},${firstPoint.lon},${firstPoint.time/1000}`, (error, response, body) => {
-        if (error) return rej(error);
-        const data = JSON.parse(body).hourly.data;
+      https.get(`${DARK_SKY_API.uri}/${process.env.DARK_SKY_API_KEY}/${firstPoint.lat},${firstPoint.lon},${firstPoint.time/1000}`, response => {
+        let body = "";
+        response.on("data", d => {
+          body += d;
+        });
+        response.on("end", () => {
+          const data = JSON.parse(body).hourly.data;
 
-        for (var i = 0; i < data.length; i++) {
-          if (firstPoint.time / 1000 > data[i].time) continue;
-          this.temperature = data[i].temperature;
-          break;
-        }
-
-        res(this.temperature);
+          for (var i = 0; i < data.length; i++) {
+            if (firstPoint.time / 1000 > data[i].time) continue;
+            this.temperature = data[i].temperature;
+            break;
+          }
+  
+          res(this.temperature);
+        });
+      }).on("error", error => {
+        rej(error);
       });
     });
   }
