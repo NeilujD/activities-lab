@@ -1,5 +1,8 @@
 /* eslint-disable no-undef */
 import assert from 'assert';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import { Track } from '../src/track.js';
 import sample from '../sample.js';
